@@ -4,8 +4,8 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Box
   - GroundSymbol
+  - PuzzelBox
   layers:
   - Default
   - TransparentFX

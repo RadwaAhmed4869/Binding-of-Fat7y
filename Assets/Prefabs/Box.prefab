@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 8162024925159551968}
   - component: {fileID: 8162024925159551983}
   - component: {fileID: 8162024925159551982}
+  - component: {fileID: -1497651988666173469}
   m_Layer: 0
   m_Name: Box
-  m_TagString: Box
+  m_TagString: PuuzzelBox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -114,3 +115,16 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &-1497651988666173469
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8162024925159551981}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fd9279d5d3443047a17f459085f5e20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 0
