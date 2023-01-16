@@ -7,25 +7,42 @@ public class PlayerMoveScript : MonoBehaviour
 
     private float horizontal;
     private float vertical;
+
+    private Vector3 vectorMovement;
+    private Vector3 vectorVelocity;
+
+    private float mouseX;
     [SerializeField]
     private CharacterController characterController;
     [SerializeField]
     private float moveSpeed = 12.0f;
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
+    [SerializeField]
+    private float gravity = 0f;
+    [SerializeField]
+    private float rotateAmount;
+   
     void Update()
     {
         horizontal = Input.GetAxis("Horizontal");
         vertical = Input.GetAxis("Vertical");
+        
+        //RotatePlayer();
+    }
+    private void FixedUpdate()
+    {
         MoveCharacter();
     }
     void MoveCharacter()
     {
-        Vector3 newPos = transform.right * horizontal + transform.forward * vertical;
-        characterController.Move(newPos * moveSpeed * Time.deltaTime);
+        vectorMovement = characterController.transform.forward * horizontal;
+        characterController.transform.Rotate(Vector3.up * rotateAmount * vertical *Time.deltaTime);
+        
+        characterController.Move(vectorMovement * moveSpeed * Time.deltaTime);
+
+
+    }
+    void RotatePlayer()
+    {
+        
     }
 }
