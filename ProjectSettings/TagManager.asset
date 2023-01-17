@@ -5,7 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - GroundSymbol
+<<<<<<< HEAD
   - PuzzelBox
+=======
+  - Interact
+>>>>>>> interact
   layers:
   - Default
   - TransparentFX
