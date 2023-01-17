@@ -7,12 +7,18 @@ public class GroundSymbol : MonoBehaviour
     public int puzzelSymbol;
     public int correctSymbol;
     public bool isActive;
+
+    private float offset = 0.1f;
+
+    [SerializeField] private GameObject fx;
+
     //[SerializeField] private bool requireAnswer;
-    private SymbolID matchingBox;
+    //private SymbolID matchingBox;
 
     private void Start()
     {
         isActive = false;
+        fx.gameObject.SetActive(false);
         //if(requireAnswer)
         //{
         //    isActive = false;
@@ -23,12 +29,20 @@ public class GroundSymbol : MonoBehaviour
         //}
     }
 
+    private void Update()
+    {
+        if(isActive)
+        {
+            fx.gameObject.SetActive(true);
+        }
+    }
+
     private void OnTriggerStay(Collider other)
     {
         if (other.gameObject.CompareTag("PuzzelBox"))
         {
             //Debug.Log("collision");
-            if (Mathf.Abs(transform.position.x - other.gameObject.transform.position.x) <= 0.1f && Mathf.Abs(transform.position.z - other.gameObject.transform.position.z) <= 0.1f)
+            if (Mathf.Abs(transform.position.x - other.gameObject.transform.position.x) <= offset && Mathf.Abs(transform.position.z - other.gameObject.transform.position.z) <= offset)
             {
                 //Debug.Log("box position:" + transform.position.x);
                 //Debug.Log("symbol position:" + collision.gameObject.transform.position.x);
