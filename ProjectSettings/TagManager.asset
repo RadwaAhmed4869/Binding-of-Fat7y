@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Box
   - GroundSymbol
+  - PlayerEyes
+  - pushBox
   layers:
   - Default
   - TransparentFX

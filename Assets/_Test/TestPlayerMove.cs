@@ -9,10 +9,14 @@ public class TestPlayerMove : MonoBehaviour
     private float m_Speed;
     private float x;
     private float z;
-    // Start is called before the first frame update
+
+
+    //private Animator player_animator;
+    private string WALK_PARAM = "walk";
     void Start()
     {
         m_Rigidbody = GetComponent<Rigidbody>();
+        //player_animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -22,36 +26,58 @@ public class TestPlayerMove : MonoBehaviour
         z = Input.GetAxis("Vertical") * m_Speed * Time.deltaTime;
         MoveCharacter();
     }
+    void AnimatePlayer()
+    {
+        if (z > 0)
+        {
+            //player_animator.SetBool(WALK_PARAM, true);
+        }
+        else if (z == 0)
+        {
+            //player_animator.SetBool(WALK_PARAM, false);
+        }
+    }
     void MoveCharacter()
     {
-        //Vector3 desiredVelocity = Input.GetAxis("Horizontal") * transform.right + Input.GetAxis("Vertical") * transform.forward;
-        //rb.velocity = Vector3.Lerp(rb.velocity, desiredVelocity, Time.deltaTime * moveSpeed);
+        Vector3 desiredVelocity = Input.GetAxis("Horizontal") * transform.right + Input.GetAxis("Vertical") * transform.forward;
+        //AnimatePlayer();
+        m_Rigidbody.velocity = Vector3.Lerp(m_Rigidbody.velocity, desiredVelocity, Time.deltaTime * m_Speed);
 
 
-        if (Input.GetKey(KeyCode.UpArrow))
-        {
-            //Move the Rigidbody forwards constantly at speed you define (the blue arrow axis in Scene view)
-            transform.Rotate(new Vector3(0, 0, 0) * m_Speed, Space.World);
-            m_Rigidbody.velocity = transform.forward * m_Speed;
-        }
+        //if (Input.GetKeyDown(KeyCode.UpArrow))
+        //{
+        //    //Move the Rigidbody forwards constantly at speed you define (the blue arrow axis in Scene view)
+        //    transform.Rotate(new Vector3(0, 0, 0) * m_Speed, Space.World);
+        //    player_animator.SetBool(WALK_PARAM, true);
+        //    m_Rigidbody.velocity = transform.forward * m_Speed;
+        //}
+        //if (Input.GetKeyUp(KeyCode.UpArrow))
+        //{
+        //    player_animator.SetBool(WALK_PARAM, false);
+        //}
 
-        if (Input.GetKey(KeyCode.DownArrow))
-        {
-            transform.Rotate(new Vector3(0, 180, 0) * m_Speed, Space.World);
-            //Move the Rigidbody backwards constantly at the speed you define (the blue arrow axis in Scene view)
-            m_Rigidbody.velocity = -transform.forward * m_Speed;
-        }
+        //if (Input.GetKeyDown(KeyCode.DownArrow))
+        //{
+        //    transform.Rotate(new Vector3(0, 180, 0) * m_Speed, Space.World);
+        //    player_animator.SetBool(WALK_PARAM, true);
+        //    //Move the Rigidbody backwards constantly at the speed you define (the blue arrow axis in Scene view)
+        //    m_Rigidbody.velocity = -transform.forward * m_Speed;
+        //}
+        //if (Input.GetKeyUp(KeyCode.DownArrow))
+        //{
+        //    player_animator.SetBool(WALK_PARAM, false);
+        //}
 
-        if (Input.GetKeyDown(KeyCode.RightArrow))
-        {
-            //Rotate the sprite about the Y axis in the positive direction
-            transform.Rotate(new Vector3(0, 90, 0) * m_Speed, Space.World);
-        }
+        //if (Input.GetKeyDown(KeyCode.RightArrow))
+        //{
+        //    //Rotate the sprite about the Y axis in the positive direction
+        //    transform.Rotate(new Vector3(0, 90, 0) * m_Speed, Space.World);
+        //}
 
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
-        {
-            //Rotate the sprite about the Y axis in the negative direction
-            transform.Rotate(new Vector3(0, -90, 0) * m_Speed, Space.World);
-        }
+        //if (Input.GetKeyDown(KeyCode.LeftArrow))
+        //{
+        //    //Rotate the sprite about the Y axis in the negative direction
+        //    transform.Rotate(new Vector3(0, 180, 0) * m_Speed, Space.World);
+        //}
     }
 }
