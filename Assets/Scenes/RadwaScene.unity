@@ -347,6 +347,7 @@ MonoBehaviour:
   puzzelSymbol: 0
   correctSymbol: 3
   isActive: 0
+  isAlligned: 0
   fx: {fileID: 956117253}
 --- !u!1 &253335584
 GameObject:
@@ -1503,6 +1504,7 @@ MonoBehaviour:
   puzzelSymbol: 0
   correctSymbol: 1
   isActive: 0
+  isAlligned: 0
   fx: {fileID: 814856867}
 --- !u!1001 &1979760005
 PrefabInstance:
@@ -1659,7 +1661,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8162024925159551970, guid: b5d1dcdd7a68a9d4883d97564ad4ddf1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.50025
+      value: 3.70037
       objectReference: {fileID: 0}
     - target: {fileID: 8162024925159551970, guid: b5d1dcdd7a68a9d4883d97564ad4ddf1, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1667,7 +1669,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8162024925159551970, guid: b5d1dcdd7a68a9d4883d97564ad4ddf1, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.50004995
+      value: -0.40004003
       objectReference: {fileID: 0}
     - target: {fileID: 8162024925159551970, guid: b5d1dcdd7a68a9d4883d97564ad4ddf1, type: 3}
       propertyPath: m_LocalRotation.w

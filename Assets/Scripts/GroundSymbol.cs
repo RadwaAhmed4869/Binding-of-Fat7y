@@ -7,6 +7,7 @@ public class GroundSymbol : MonoBehaviour
     public int puzzelSymbol;
     public int correctSymbol;
     public bool isActive;
+    public bool isAlligned;
 
     private float offset = 0.1f;
 
@@ -17,6 +18,7 @@ public class GroundSymbol : MonoBehaviour
 
     private void Start()
     {
+        isAlligned = false;
         isActive = false;
         fx.gameObject.SetActive(false);
         //if(requireAnswer)
@@ -35,6 +37,10 @@ public class GroundSymbol : MonoBehaviour
         {
             fx.gameObject.SetActive(true);
         }
+        else
+        {
+            fx.gameObject.SetActive(false);
+        }
     }
 
     private void OnTriggerStay(Collider other)
@@ -48,20 +54,28 @@ public class GroundSymbol : MonoBehaviour
                 //Debug.Log("symbol position:" + collision.gameObject.transform.position.x);
                 //Debug.Log("diff: " + (transform.position.x - other.gameObject.transform.position.x));
 
-                if(!isActive)
+                if(!isAlligned)
                 {
-                    isActive = true;
+                    isAlligned = true;
                     puzzelSymbol = other.gameObject.GetComponent<SymbolID>().ID;
                     Debug.Log("perfect allignment");
                 }
             }
             else
             {
-                isActive = false;
+                isAlligned = false;
                 puzzelSymbol = 0;
                 Debug.Log("oh no!");
             }
 
+        }
+        if(isAlligned && puzzelSymbol == correctSymbol)
+        {
+            isActive = true;
+        }
+        else
+        {
+            isActive = false;
         }
     }
 }
