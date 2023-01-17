@@ -10,7 +10,6 @@ public class PlayerInteract : MonoBehaviour
     void Update()
     {
 
-
         if (Input.GetKeyDown(KeyCode.E))
         {
             isInvoked = true;
