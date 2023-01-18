@@ -445,7 +445,7 @@ CharacterController:
   m_Height: 2
   m_Radius: 0.5
   m_SlopeLimit: 45
-  m_StepOffset: 0.3
+  m_StepOffset: 0.7
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 1.01, z: 0}
@@ -4478,6 +4478,7 @@ GameObject:
   - component: {fileID: 1970368810}
   - component: {fileID: 1970368812}
   - component: {fileID: 1970368811}
+  - component: {fileID: 1970368813}
   m_Layer: 0
   m_Name: Cube.003 (1)
   m_TagString: Untagged
@@ -4549,6 +4550,20 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1970368809}
+  m_Mesh: {fileID: -8678823145569952518, guid: 24b5a0920fdaee94082ed934b6ebb2c5, type: 3}
+--- !u!64 &1970368813
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1970368809}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
   m_Mesh: {fileID: -8678823145569952518, guid: 24b5a0920fdaee94082ed934b6ebb2c5, type: 3}
 --- !u!1 &2037644336
 GameObject:
