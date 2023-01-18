@@ -9,7 +9,7 @@ public class GroundSymbol : MonoBehaviour
     public bool isActive;
     public bool isAlligned;
 
-    private float offset = 0.1f;
+    private float offset = 0.15f;
 
     [SerializeField] private GameObject fx;
 
