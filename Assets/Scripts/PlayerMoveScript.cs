@@ -15,7 +15,7 @@ public class PlayerMoveScript : MonoBehaviour
     [SerializeField]
     private CharacterController characterController;
     [SerializeField]
-    private float moveSpeed = 12.0f;
+    private float moveSpeed = 5.0f;
     [SerializeField]
     private float gravity = -9.8f;
     [SerializeField]

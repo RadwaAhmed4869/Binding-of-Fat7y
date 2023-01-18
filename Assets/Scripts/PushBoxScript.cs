@@ -9,7 +9,7 @@ public class PushBoxScript : MonoBehaviour
     private Animator character_animator;
 
     private string PUSH_PARAM = "push";
-    private string BOX_TAG = "Box";
+    private string BOX_TAG = "PuuzzelBox";
     private string PUSH_BOX_TAG = "pushBox";
     private bool isBox;
     private float rotateY;
@@ -32,9 +32,12 @@ public class PushBoxScript : MonoBehaviour
 
                 rigidbody.AddForceAtPosition(forceDirection * forceMagnitude, transform.position, ForceMode.Impulse);
             }
-       
-            character_animator.SetBool(PUSH_PARAM, false);
-        //rigidbody.isKinematic = true;
+            else
+            {
+                character_animator.SetBool(PUSH_PARAM, false);
+                //rigidbody.isKinematic = true;
+
+            }
     }
 
 
