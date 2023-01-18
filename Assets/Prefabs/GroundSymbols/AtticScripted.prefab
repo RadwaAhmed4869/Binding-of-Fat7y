@@ -92,10 +92,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7561942665608926514}
-  - component: {fileID: 8326308539320798324}
   - component: {fileID: 6115082817475631763}
+  - component: {fileID: -5183440588614081715}
   m_Layer: 0
-  m_Name: GroundAtticSymbolPrefab
+  m_Name: AtticScripted
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -117,22 +117,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &8326308539320798324
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8249943798802804621}
-  serializedVersion: 2
-  m_Mass: 2
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!65 &6115082817475631763
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -146,3 +130,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.99327135, y: 1.0053403, z: 1.0015011}
   m_Center: {x: 0.0072791576, y: 0.48424947, z: 0.003296852}
+--- !u!114 &-5183440588614081715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8249943798802804621}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8576a41ec00d32489cb305e0657bc42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  puzzelSymbol: 0
+  correctSymbol: 0
+  isActive: 0
+  isAlligned: 0
+  fx: {fileID: 0}

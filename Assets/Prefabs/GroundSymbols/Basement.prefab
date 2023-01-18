@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 5172224683296684985}
   - component: {fileID: 1445795848791054506}
   m_Layer: 0
-  m_Name: Symbol4
+  m_Name: Basement
   m_TagString: GroundSymbol
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
