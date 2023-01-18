@@ -6,22 +6,35 @@ using TMPro;
 public class Timer : MonoBehaviour
 {
     [Header("Component")]
-    public TextMeshProUGUI timerText;
-    [SerializeField] private PuzzelManager PManager;
+    [SerializeField] private TextMeshProUGUI timerText;
     [SerializeField] private float timeRemaining = 10;
-    [SerializeField] GameObject gameOver;
     [SerializeField] private bool timerIsRunning = false;
+
+    public float TimeRemaining { get => timeRemaining; set => timeRemaining = value; }
 
     private void Start()
     {
-        gameOver.SetActive(false);
-        PManager.GetComponent<PuzzelManager>();
-        timerIsRunning = false;
+        timerText.gameObject.SetActive(true);
+        // Starts the timer automatically
+        //theLight.gameObject.SetActive(false);
+        timerIsRunning = true;
     }
-
     void Update()
     {
-        startTimer(PManager.Solved);
+        if (timerIsRunning)
+        {
+            if (TimeRemaining > 0)
+            {
+                TimeRemaining -= Time.deltaTime;
+                DisplayTime(TimeRemaining);
+            }
+            else
+            {
+                Debug.Log("Time has run out!");
+                TimeRemaining = 0;
+                timerIsRunning = false;
+            }
+        }
     }
     void DisplayTime(float timeToDisplay)
     {
@@ -30,37 +43,4 @@ public class Timer : MonoBehaviour
         float seconds = Mathf.FloorToInt(timeToDisplay % 60);
         timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
     }
-
-    void startTimer(bool pm)
-    {
-
-        if (pm)
-        {
-            if (timeRemaining > 0)
-            {
-                timeRemaining -= Time.deltaTime;
-                DisplayTime(timeRemaining);
-
-
-                //timerText.color = Color.red;
-
-            }
-            else
-            {
-                gameOver.SetActive(true);
-                Debug.Log("GameOver!");
-            }
-        }
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        Debug.Log("collition");
-        if (other.gameObject.CompareTag("Door") && PManager.Solved)
-        {
-            Debug.Log("win");
-        }
-
-    }
-
 }

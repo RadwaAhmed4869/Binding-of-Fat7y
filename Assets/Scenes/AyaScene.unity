@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028355, g: 0.22571374, b: 0.30692255, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -356,6 +356,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Box
       objectReference: {fileID: 0}
+    - target: {fileID: 8162024925159551981, guid: b5d1dcdd7a68a9d4883d97564ad4ddf1, type: 3}
+      propertyPath: m_TagString
+      value: PuzzelBox
+      objectReference: {fileID: 0}
+    - target: {fileID: 8162024925159551982, guid: b5d1dcdd7a68a9d4883d97564ad4ddf1, type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b5d1dcdd7a68a9d4883d97564ad4ddf1, type: 3}
 --- !u!1 &862085443 stripped
@@ -539,6 +547,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   forceMagnitude: 10
+  audio: {fileID: 0}
 --- !u!114 &2091361702
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -552,7 +561,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterController: {fileID: 2091361703}
-  moveSpeed: 1
+  moveSpeed: 1.5
   gravity: -9.8
   rotateAmount: 90
   player_animator: {fileID: 2091361700}

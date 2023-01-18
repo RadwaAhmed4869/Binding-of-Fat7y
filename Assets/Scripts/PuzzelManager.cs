@@ -3,15 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 using UnityEngine.UI;
+using TMPro;
 
 public class PuzzelManager : MonoBehaviour
 {
     [SerializeField] private GroundSymbol[] groundSymbols;
     [SerializeField] private RawImage puzzelAnswer;
+    [SerializeField] private GameObject timeManager;
+    [SerializeField] private Timer timeManageObj;
+    [SerializeField] private GameObject gameOver;
+    [SerializeField] private TextMeshProUGUI WinLoseText;
+    [SerializeField] private Animator anim;
+    [SerializeField] private Light theLight;
     [SerializeField] Color transparentColor;
     [SerializeField] Color originalColor;
     [SerializeField] bool solved;
 
+    /*                anim.StartPlayback();
+                theLight.gameObject.SetActive(true);*/
     public bool Solved { get => solved; private set => solved = value; }
 
     private void Start()
@@ -37,8 +46,21 @@ public class PuzzelManager : MonoBehaviour
             }
         }
         //puzzelAnswer.GetComponent<RawImage>().color = originalColor;
+        if (timeManageObj.TimeRemaining == 0)
+        {
+            gameOver.SetActive(true);
+            WinLoseText.text = "Game Over";
+        }
+        else
+        {
+            //gameOver.SetActive(true);
+            //WinLoseText.text = "Winner";
+            timeManager.gameObject.SetActive(true);
+            puzzelAnswer.gameObject.SetActive(true);
+            anim.SetBool("IsOpen", true);
+            theLight.enabled = true;
+        }
 
-        puzzelAnswer.gameObject.SetActive(true);
 
         return true;
     }

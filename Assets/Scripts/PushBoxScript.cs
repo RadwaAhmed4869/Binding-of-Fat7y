@@ -7,7 +7,7 @@ public class PushBoxScript : MonoBehaviour
     [SerializeField]
     private float forceMagnitude;
     private Animator character_animator;
-    [SerializeField] private AudioSource audio;
+    //[SerializeField] private AudioSource audio;
 
     private string PUSH_PARAM = "push";
     private string BOX_TAG = "PuuzzelBox";
@@ -48,9 +48,9 @@ public class PushBoxScript : MonoBehaviour
         if (other.CompareTag(PUSH_BOX_TAG))
         {
             Debug.Log("push");
-            audio.volume = 1;
-            audio.PlayOneShot(audio.clip);
-             character_animator.SetBool(PUSH_PARAM, true);
+            //audio.volume = 1;
+            //audio.PlayOneShot(audio.clip);
+            character_animator.SetBool(PUSH_PARAM, true);
 
         }
     }
@@ -59,7 +59,7 @@ public class PushBoxScript : MonoBehaviour
     {
         if (other.CompareTag(PUSH_BOX_TAG))
         {
-            audio.volume = 0;
+            //audio.volume = 0;
             character_animator.SetBool(PUSH_PARAM, false);
 
         }
