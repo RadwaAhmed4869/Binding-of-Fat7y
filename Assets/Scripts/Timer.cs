@@ -8,37 +8,40 @@ public class Timer : MonoBehaviour
     [Header("Component")]
     public TextMeshProUGUI timerText;
 
-    [Header("Timer Settings")]
-    public float currenttime;
-    public bool countDown;
+    public float timeRemaining = 10;
+    public bool timerIsRunning = false;
 
-    [Header("Limit Settings")]
-    public bool hasLimit;
-    public float timerLimit;
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        
+        // Starts the timer automatically
+        timerIsRunning = true;
     }
-
-    // Update is called once per frame
     void Update()
     {
-        currenttime = countDown ? currenttime -= Time.deltaTime : currenttime += Time.deltaTime;
-        if (hasLimit && ((countDown && currenttime <= timerLimit) ||(!countDown && currenttime >= timerLimit)))
+        if (timerIsRunning)
         {
-            currenttime = timerLimit;
-            SetTimerText();
-            timerText.color = Color.red;
-            enabled = false;
+            if (timeRemaining > 0)
+            {
+                timeRemaining -= Time.deltaTime;
+                DisplayTime(timeRemaining);
+
+
+                //timerText.color = Color.red;
+                
+            }
+            else
+            {
+                Debug.Log("Time has run out!");
+                timeRemaining = 0;
+                timerIsRunning = false;
+            }
         }
-
-        SetTimerText();
-        
     }
-
-    private void SetTimerText()
+    void DisplayTime(float timeToDisplay)
     {
-        timerText.text = currenttime.ToString("0.0");
+        timeToDisplay += 1;
+        float minutes = Mathf.FloorToInt(timeToDisplay / 60);
+        float seconds = Mathf.FloorToInt(timeToDisplay % 60);
+        timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
     }
 }
