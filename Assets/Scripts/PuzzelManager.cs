@@ -10,19 +10,20 @@ public class PuzzelManager : MonoBehaviour
     [SerializeField] private RawImage puzzelAnswer;
     [SerializeField] Color transparentColor;
     [SerializeField] Color originalColor;
+    [SerializeField] bool solved;
 
-    bool solved;
+    public bool Solved { get => solved; private set => solved = value; }
 
     private void Start()
     {
-        solved = false;
+        Solved = false;
         //puzzelAnswer.GetComponent<RawImage>().color = transparentColor;
         puzzelAnswer.gameObject.SetActive(false);
     }
     void Update()
     {
-        solved = check();
-        Debug.Log(solved);
+        Solved = check();
+        //Debug.Log(Solved);
 
     }
 

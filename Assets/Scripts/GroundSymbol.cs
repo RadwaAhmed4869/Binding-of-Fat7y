@@ -58,14 +58,14 @@ public class GroundSymbol : MonoBehaviour
                 {
                     isAlligned = true;
                     puzzelSymbol = other.gameObject.GetComponent<SymbolID>().ID;
-                    Debug.Log("perfect allignment");
+                   // Debug.Log("perfect allignment");
                 }
             }
             else
             {
                 isAlligned = false;
                 puzzelSymbol = 0;
-                Debug.Log("oh no!");
+                //Debug.Log("oh no!");
             }
 
         }
