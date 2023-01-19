@@ -52,7 +52,7 @@ public class GroundSymbol : MonoBehaviour
             {
                 //Debug.Log("box position:" + transform.position.x);
                 //Debug.Log("symbol position:" + collision.gameObject.transform.position.x);
-                //Debug.Log("diff: " + (transform.position.x - other.gameObject.transform.position.x));
+                Debug.Log("diff: " + (transform.position.x - other.gameObject.transform.position.x));
 
                 if(!isAlligned)
                 {
