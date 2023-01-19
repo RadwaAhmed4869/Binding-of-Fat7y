@@ -15,7 +15,7 @@ public class Timer : MonoBehaviour
 
     private void Start()
     {
-        timeRemaining = 15;
+        timeRemaining = 25;
         timerText.gameObject.SetActive(true);
         // Starts the timer automatically
         //theLight.gameObject.SetActive(false);

@@ -53,7 +53,7 @@ public class PushBoxScript : MonoBehaviour
             forceDirection.Normalize();
 
             //rigidbody.AddForceAtPosition(forceDirection * forceMagnitude, transform.position, ForceMode.Impulse);
-            audio.volume = 0.4f;
+            audio.volume = 0.1f;
             if (!audio.isPlaying)
             {
                 audio.PlayOneShot(audio.clip);
