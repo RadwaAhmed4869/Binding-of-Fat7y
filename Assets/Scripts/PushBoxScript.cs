@@ -7,10 +7,10 @@ public class PushBoxScript : MonoBehaviour
     [SerializeField]
     private float forceMagnitude;
     private Animator character_animator;
-    [SerializeField] private AudioSource audio;
+    //[SerializeField] private AudioSource audio;
 
     private string PUSH_PARAM = "push";
-    private string BOX_TAG = "PuzzelBox";
+    private string BOX_TAG = "PuuzzelBox";
     private string PUSH_BOX_TAG = "pushBox";
     private bool isBox;
     private float rotateY;
@@ -20,37 +20,41 @@ public class PushBoxScript : MonoBehaviour
         character_animator = GetComponent<Animator>();
     }
 
-    private void OnControllerColliderHit(ControllerColliderHit hit)
-    {
+    //private void OnControllerColliderHit(ControllerColliderHit hit)
+    //{
 
-            Rigidbody rigidbody = hit.collider.attachedRigidbody;
-            if (rigidbody != null && hit.collider.CompareTag(BOX_TAG))
-            {
-                rigidbody.isKinematic = false;
-                Vector3 forceDirection = hit.gameObject.transform.position - transform.position;
-                forceDirection.y = 0.0f;
-                forceDirection.Normalize();
+    //        Rigidbody rigidbody = hit.collider.attachedRigidbody;
+    //        if (rigidbody != null && hit.collider.CompareTag(BOX_TAG))
+    //        {
+    //            rigidbody.isKinematic = false;
+    //            Vector3 forceDirection = hit.gameObject.transform.position - transform.position;
+    //            forceDirection.y = 0.0f;
+    //            forceDirection.Normalize();
 
-                rigidbody.AddForceAtPosition(forceDirection * forceMagnitude, transform.position, ForceMode.Impulse);
-            }
-            else
-            {
-                character_animator.SetBool(PUSH_PARAM, false);
-                //rigidbody.isKinematic = true;
+    //            rigidbody.AddForceAtPosition(forceDirection * forceMagnitude, transform.position, ForceMode.Impulse);
+    //        }
+    //        else
+    //        {
+    //            character_animator.SetBool(PUSH_PARAM, false);
+    //            //rigidbody.isKinematic = true;
 
-            }
-    }
+    //        }
+    //}
 
 
     private void OnTriggerStay(Collider other)
     {
-        
-        if (other.CompareTag(PUSH_BOX_TAG))
+        Rigidbody rigidbody = other.attachedRigidbody;
+        if (other.CompareTag(PUSH_BOX_TAG) && rigidbody!=null)
         {
-            Debug.Log("push");
-            audio.volume = 0.4f;
-            if(!audio.isPlaying)
-                audio.PlayOneShot(audio.clip);
+            rigidbody.isKinematic = false;
+            Vector3 forceDirection = other.gameObject.transform.position - transform.position;
+            forceDirection.y = 0.0f;
+            forceDirection.Normalize();
+
+            //rigidbody.AddForceAtPosition(forceDirection * forceMagnitude, transform.position, ForceMode.Impulse);
+            //audio.volume = 1;
+            //audio.PlayOneShot(audio.clip);
             character_animator.SetBool(PUSH_PARAM, true);
 
         }
@@ -58,9 +62,10 @@ public class PushBoxScript : MonoBehaviour
     
     private void OnTriggerExit(Collider other)
     {
+        Rigidbody rigidbody = other.attachedRigidbody;
         if (other.CompareTag(PUSH_BOX_TAG))
         {
-            //audio.volume = 0;
+            rigidbody.isKinematic = true;
             character_animator.SetBool(PUSH_PARAM, false);
 
         }

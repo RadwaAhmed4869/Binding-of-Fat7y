@@ -22,6 +22,7 @@ public class PuzzelManager : MonoBehaviour
     [SerializeField] Color originalColor;
     [SerializeField] bool solved;
 
+
     /*                anim.StartPlayback();
                 theLight.gameObject.SetActive(true);*/
     public bool Solved { get => solved; private set => solved = value; }
