@@ -8,7 +8,8 @@ public class RoomOne : MonoBehaviour
     //[SerializeField] private GameObject timeManager;
     [SerializeField] private Timer timeManageObj;
     [SerializeField] private TextMeshProUGUI timerText;
-    [SerializeField] private GameObject imageMessage;
+    [SerializeField] private Image imageMessage;
+
 
     private void OnTriggerEnter(Collider other)
     {
@@ -19,7 +20,7 @@ public class RoomOne : MonoBehaviour
             timeManageObj.TimerIsRunning = false;
             timerText.gameObject.SetActive(false);
             timeManageObj.TimeRemaining = 15;
-            imageMessage.gameObject.SetActive(false);
+            imageMessage.enabled = false;
             Debug.Log("finished Room one");
         }
     }

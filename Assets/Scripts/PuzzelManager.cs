@@ -8,12 +8,15 @@ using TMPro;
 public class PuzzelManager : MonoBehaviour
 {
     [SerializeField] private GroundSymbol[] groundSymbols;
-    [SerializeField] private RawImage puzzelAnswer;
+    //[SerializeField] private RawImage puzzelAnswer;
+    [SerializeField] private Image puzzelAnswer;
     [SerializeField] private GameObject timeManager;
     [SerializeField] private Timer timeManageObj;
     [SerializeField] private GameObject gameOver;
     [SerializeField] private TextMeshProUGUI WinLoseText;
     [SerializeField] private Animator anim;
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip doorSound;
     [SerializeField] private Light theLight;
     [SerializeField] Color transparentColor;
     [SerializeField] Color originalColor;
@@ -26,7 +29,7 @@ public class PuzzelManager : MonoBehaviour
     private void Start()
     {
         Solved = false;
-        
+        audioSource = GetComponent<AudioSource>();
         //puzzelAnswer.GetComponent<RawImage>().color = transparentColor;
         puzzelAnswer.gameObject.SetActive(false);
     }
@@ -60,6 +63,7 @@ public class PuzzelManager : MonoBehaviour
             puzzelAnswer.gameObject.SetActive(true);
             anim.SetBool("IsOpen", true);
             theLight.enabled = true;
+            audioSource.PlayOneShot(doorSound, 0.7F);
         }
 
 
