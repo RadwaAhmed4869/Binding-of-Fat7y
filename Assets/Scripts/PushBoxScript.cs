@@ -48,7 +48,7 @@ public class PushBoxScript : MonoBehaviour
         if (other.CompareTag(PUSH_BOX_TAG))
         {
             Debug.Log("push");
-            audio.volume = 0.5f;
+            audio.volume = 0.4f;
             if(!audio.isPlaying)
                 audio.PlayOneShot(audio.clip);
             character_animator.SetBool(PUSH_PARAM, true);

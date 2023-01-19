@@ -12,7 +12,7 @@ public class TestPlayerMove : MonoBehaviour
 
 
     //private Animator player_animator;
-    private string WALK_PARAM = "walk";
+    //private string WALK_PARAM = "walk";
     void Start()
     {
         m_Rigidbody = GetComponent<Rigidbody>();
