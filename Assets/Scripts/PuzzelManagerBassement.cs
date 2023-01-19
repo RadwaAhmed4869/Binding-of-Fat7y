@@ -9,7 +9,7 @@ public class PuzzelManagerBassement : MonoBehaviour
 {
     [SerializeField] private GroundSymbol[] groundSymbols;
     [SerializeField] private GameObject GameWin;
-    //[SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioSource WinSound;
     //[SerializeField] private AudioClip doorSound;
 
     [SerializeField] bool solved;
@@ -43,6 +43,11 @@ public class PuzzelManagerBassement : MonoBehaviour
 
             GameWin.SetActive(true);
 
+        if (!WinSound.isPlaying)
+        {
+            WinSound.PlayOneShot(WinSound.clip);
+        }
+            
 
 
         return true;

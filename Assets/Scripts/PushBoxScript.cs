@@ -7,7 +7,7 @@ public class PushBoxScript : MonoBehaviour
     [SerializeField]
     private float forceMagnitude;
     private Animator character_animator;
-    //[SerializeField] private AudioSource audio;
+    [SerializeField] private AudioSource audio;
 
     private string PUSH_PARAM = "push";
     private string BOX_TAG = "PuuzzelBox";
@@ -53,8 +53,12 @@ public class PushBoxScript : MonoBehaviour
             forceDirection.Normalize();
 
             //rigidbody.AddForceAtPosition(forceDirection * forceMagnitude, transform.position, ForceMode.Impulse);
-            //audio.volume = 1;
-            //audio.PlayOneShot(audio.clip);
+            audio.volume = 0.4f;
+            if (!audio.isPlaying)
+            {
+                audio.PlayOneShot(audio.clip);
+            }
+           
             character_animator.SetBool(PUSH_PARAM, true);
 
         }
