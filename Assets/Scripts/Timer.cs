@@ -7,21 +7,23 @@ public class Timer : MonoBehaviour
 {
     [Header("Component")]
     [SerializeField] private TextMeshProUGUI timerText;
-    [SerializeField] private float timeRemaining = 10;
+    [SerializeField] private float timeRemaining;
     [SerializeField] private bool timerIsRunning = false;
 
     public float TimeRemaining { get => timeRemaining; set => timeRemaining = value; }
+    public bool TimerIsRunning { get => timerIsRunning; set => timerIsRunning = value; }
 
     private void Start()
     {
+        timeRemaining = 15;
         timerText.gameObject.SetActive(true);
         // Starts the timer automatically
         //theLight.gameObject.SetActive(false);
-        timerIsRunning = true;
+        TimerIsRunning = true;
     }
     void Update()
     {
-        if (timerIsRunning)
+        if (TimerIsRunning)
         {
             if (TimeRemaining > 0)
             {
@@ -32,7 +34,7 @@ public class Timer : MonoBehaviour
             {
                 Debug.Log("Time has run out!");
                 TimeRemaining = 0;
-                timerIsRunning = false;
+                TimerIsRunning = false;
             }
         }
     }
@@ -43,4 +45,7 @@ public class Timer : MonoBehaviour
         float seconds = Mathf.FloorToInt(timeToDisplay % 60);
         timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
     }
+
+
+
 }

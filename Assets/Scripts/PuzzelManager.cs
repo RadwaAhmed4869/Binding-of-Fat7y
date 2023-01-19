@@ -26,6 +26,7 @@ public class PuzzelManager : MonoBehaviour
     private void Start()
     {
         Solved = false;
+        
         //puzzelAnswer.GetComponent<RawImage>().color = transparentColor;
         puzzelAnswer.gameObject.SetActive(false);
     }

@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7039789130586862054}
   - component: {fileID: 3358109412176290732}
+  - component: {fileID: 3565319804181609004}
   m_Layer: 0
   m_Name: cardboard1
   m_TagString: Untagged
@@ -46,6 +47,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.95604575, y: 0.98376536, z: 0.9657185}
   m_Center: {x: 0.0064992905, y: 0.0008203387, z: -0.00084245205}
+--- !u!54 &3565319804181609004
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4489639816098736998}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &2241328340893242145
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -124,8 +141,8 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 12304461899c6c74daf39c52ed5aff26, type: 3}
   m_PrefabInstance: {fileID: 2241328340893242145}
   m_PrefabAsset: {fileID: 0}
---- !u!65 &2653767829859856582
-BoxCollider:
+--- !u!135 &7415958871682987887
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -135,8 +152,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.6535435, y: 1.2785674, z: 2.7579632}
-  m_Center: {x: -0.019252062, y: 0.13928372, z: 0.028215408}
+  m_Radius: 1.3853858
+  m_Center: {x: 0, y: 0.23380113, z: 0}
 --- !u!4 &1770043559505327306 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 12304461899c6c74daf39c52ed5aff26, type: 3}
