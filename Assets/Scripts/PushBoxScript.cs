@@ -10,7 +10,7 @@ public class PushBoxScript : MonoBehaviour
     //[SerializeField] private AudioSource audio;
 
     private string PUSH_PARAM = "push";
-    private string BOX_TAG = "PuuzzelBox";
+    private string BOX_TAG = "PuzzelBox";
     private string PUSH_BOX_TAG = "pushBox";
     private bool isBox;
     private float rotateY;
